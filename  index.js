@@ -19,12 +19,14 @@ function rollDice() {
   }
 }
 
-// Запуск при загрузці
-rollDice();
+window.onload = function () {
+  rollDice();
 
-// пробіл оновленя стори
-document.addEventListener("keydown", function(event) {
-  if (event.code === "Space") {
-    rollDice();
-  }
-});
+  
+  document.addEventListener("keydown", function (event) {
+    if (event.code === "Space") {
+      event.preventDefault(); 
+      rollDice();
+    }
+  });
+};
