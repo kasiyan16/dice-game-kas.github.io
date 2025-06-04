@@ -19,14 +19,16 @@ function rollDice() {
   }
 }
 
-// Коли сторінка повністю завантажилась
+
+window.rollDice = rollDice;
+
 window.onload = function () {
   rollDice();
 
-  // Оновлення кубиків при натисканні "пробілу"
+  
   document.addEventListener("keydown", function (event) {
     if (event.code === "Space") {
-      event.preventDefault(); // Запобігає прокрутці сторінки
+      event.preventDefault(); 
       rollDice();
     }
   });
